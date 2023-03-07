@@ -1,0 +1,16 @@
+<!-- data binding to the hero properties.-->
+
+<!-- hero's name is displayed in capital letters. -->
+<h2>{{hero.name | uppercase}} Details</h2>
+<div><span>id: </span>{{hero.id}}</div>
+
+
+<!-- [(ngModel)]est la syntaxe de liaison de données bidirectionnelle d'Angular.
+Ici, il lie la hero.namepropriété à la zone de texte HTML afin que les données puissent 
+circuler dans les deux sens . Les données peuvent circuler de la hero.namepropriété vers
+la zone de texte et de la zone de texte vers le fichier hero.name. -->
+
+<div>
+  <label for="name">Hero name: </label>
+  <input id="name" [(ngModel)]="hero.name" placeholder="name">
+</div>
