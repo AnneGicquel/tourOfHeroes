@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Hero } from 'src/app/hero';
+import { HEROES } from 'src/app/mock-heroes';
 
 // is a decorator function that specifies the Angular metadata for the component.
 @Component({
@@ -11,11 +12,13 @@ import { Hero } from 'src/app/hero';
   styleUrls: ['./heroes.component.css']
 })
 export class HeroesComponent {
+  
+  heroes = HEROES;
+  selectedHero?: Hero;
 
-  hero: Hero = {
-    id: 1,
-    name: 'Windstorm'
+  // méthode pour afficher le héros
+  onSelect(hero: Hero): void {
+    this.selectedHero = hero;
   };
 
 }
-
